@@ -30,11 +30,10 @@ public class Contacto {
 	public String toString() {
 		return "Nombre: " + nombre + ", Telefono: " + telefono;
 	}
-	
-	
+		
 	@Override
 	public int hashCode() {
-		return Objects.hash(nombre, telefono);
+		return Objects.hash(nombre);
 	}
 
 	@Override
@@ -46,8 +45,10 @@ public class Contacto {
 		if (getClass() != obj.getClass())
 			return false;
 		Contacto other = (Contacto) obj;
-		return Objects.equals(nombre, other.nombre) && Objects.equals(telefono, other.telefono);
+		return Objects.equals(nombre, other.nombre);
 	}
+	
+	
 
 	// Lee un nuevo Contacto desde teclado.
 	// Devuelve null si se dejan vacíos el nombre o el teléfono

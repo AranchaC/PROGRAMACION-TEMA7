@@ -2,21 +2,24 @@
 package RetoInicialUT7;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
-public class Agenda {
+public class AgendaList {
 
 	protected static final int TAMANO_POR_DEFECTO = 100;
 
-	protected List<Contacto> contactos; // A sustituir por una lista
+	protected List<Contacto> contactos; // A sustituir por un ArrayLIst
 	protected int numElementos;
 
-	public Agenda(int tamano) {
+	public AgendaList(int tamano) {
 		contactos = new ArrayList<Contacto> (TAMANO_POR_DEFECTO);
 		numElementos = 0;
 	}
 
-	public Agenda() { this(TAMANO_POR_DEFECTO); }
+	public AgendaList() { this(TAMANO_POR_DEFECTO); }
 	
 	public int numContactos() {
 		return contactos.size();
@@ -43,18 +46,16 @@ public class Agenda {
 		return contactos.add(c);
 	}
 
-	public Contacto borraContacto(int posicion) {
-		return contactos.remove(posicion);
-		//return contactos.remove(posicion);
+	public boolean borraContacto(int posicion) {
+		return contactos.remove(posicion) != null;
 	}
 
-	public Contacto reemplazaContacto(int posicion, Contacto c) {
-		return contactos.set(posicion, c);
-		//return contactos.set(posicion, c);
+	public boolean reemplazaContacto(int posicion, Contacto c) {
+		return contactos.set(posicion, c) != null;
 	}
 
 	public Contacto getContacto(int posicion) {
-		return (Contacto)contactos.get(posicion);
+		return contactos.get(posicion);
 	}
 
 	public int buscaContacto (Contacto c) {

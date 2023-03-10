@@ -4,13 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class gestorAgenda {
+public class gestorAgendaList {
 
 		private static Scanner entrada = new Scanner(System.in);
 
 		public static void main(String[] args) {
-			//Agenda agenda = new Agenda(10);
-			List<Agenda> agenda = new ArrayList<Agenda>(10);
+			AgendaList agenda = new AgendaList(10);
 
 			int opcion;
 			while ( (opcion=menuPrincipal(!agenda.vacia()))!= 0) {
