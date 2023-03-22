@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -15,25 +16,20 @@ public class PruebaListas2 {
 				+ ", and search for elements in the list list.";
 				
 		List<String> palabras = new ArrayList<String>();
+		String[] pals = texto.split("[^A-Za-záéíóúÁÉÍÓÚ]+"); 
+		palabras = Arrays.asList(pals);
 		
-		palabras.addAll(Arrays.asList(texto.split("\\W+")));
-		//W cualquier caracter que no sea alfanumerico		
+		System.out.println("Número de palablras: "+ palabras.size());
 		palabras.sort(String.CASE_INSENSITIVE_ORDER);
 		
+		/*ListIterator<String> it = palabras.listIterator(palabras.size());
+		
+		while (it.hasPrevious()) {
+			System.out.println(it.previous() + ", ");
+		}*/  
+		
 		Set<String> noRepes = new LinkedHashSet<String>();
-		noRepes.addAll(palabras);
-		
-		System.out.println(noRepes);
-		System.out.println(noRepes.size());
-		
-		int i=1;
-		for (String palabra : noRepes) {
-			System.out.println(i++ + ": "+palabra);
-		}
-		
-		/*for (int i=0; i<palabras.size(); i++) {
-			System.out.println( (i+1) + ": " + palabras.get(i));
-		}*/
+		//ListIterator<String> cursor = 
 
 	}
 
