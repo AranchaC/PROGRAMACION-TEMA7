@@ -3,7 +3,7 @@ package Reto1UT7;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BenchMarkColecciones {
+public class BenchMarkColeccionesINICIAL {
 
 	public static void main(String[] args) throws InterruptedException {
 		final int NUM_ITERACIONES = 100000;
