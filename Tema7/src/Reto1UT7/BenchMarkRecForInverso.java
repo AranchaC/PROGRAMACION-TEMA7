@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
-public class BenchMarkColeccionesForEach {
+public class BenchMarkRecForInverso {
 
 	public static void main(String[] args) throws InterruptedException {
 		final int NUM_ITERACIONES = 1000000;
@@ -40,23 +40,23 @@ public class BenchMarkColeccionesForEach {
 		// CAMBIAR A PARTIR DE AQUÍ:
 		
 		// PRUEBAS DE RECORRIDO DE UNA LISTA:
-		// ArrayList con for each (:)
+		// ArrayList con for inverso
 		t1 = System.nanoTime();
-		for (Integer i : lista) {
-			suma +=i;
-		}
-		
-		// LinkedList con for each (:)
+        for (int i=lista.size()-1; i>= 0; i--) {
+        	suma += lista.get(i);
+        }
+				
+		// LinkedList con for inverso
 		t2 = System.nanoTime();
-		for (Integer i : listaLink) {
-			suma +=i;
-		}
+        for (int i=listaLink.size()-1; i>= 0; i--) {
+        	suma += listaLink.get(i);
+        }
 		
 		t3 = System.nanoTime();
 		
 		// FIN DE PRUEBAS, MOSTRAMOS RESULTADOS:
-		System.out.printf("Tardó en recorrido %s: %.2f ms.\n","ArrayList for each(:) ",(t2-t1)/1000.0);
-		System.out.printf("Tardó en recorrido %s: %.2f ms.\n","LinkedList for each(:) ",(t3-t2)/1000.0);
+		System.out.printf("Tardó en recorrido %s: %.2f ms.\n","ArrayList for Inverso (;;) ",(t2-t1)/1000.0);
+		System.out.printf("Tardó en recorrido %s: %.2f ms.\n","LinkedList for Inverso (;;) ",(t3-t2)/1000.0);
 
 		
 	}
