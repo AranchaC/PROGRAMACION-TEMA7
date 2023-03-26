@@ -28,6 +28,7 @@ public class BenchMarkRecBinarySearch {
 		for (int i=0; i<listaLink.size();i++) listaLink.add(aleatorios[i]);
 		
 		lista.sort(null);
+		//
 		long suma = 0;
 
 		Thread.sleep(ESPERA); 
