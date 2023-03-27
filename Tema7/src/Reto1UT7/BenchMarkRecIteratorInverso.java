@@ -39,7 +39,9 @@ public class BenchMarkRecIteratorInverso {
 		
 		// CAMBIAR A PARTIR DE AQUÍ:
 		
-		// PRUEBAS DE RECORRIDO DE UNA LISTA:
+		// PRUEBAS DE RECORRIDO DE UNA LISTA con Iterador:
+		// Hay que crear primero un tipo Iterator de Integer con nuestra lista.
+		
 		//  ArrayList con iterator inverso
 		t1 = System.nanoTime();
 		ListIterator<Integer> it = lista.listIterator(lista.size());
@@ -48,12 +50,12 @@ public class BenchMarkRecIteratorInverso {
 		}
 		
 		// LinkedList con iterator inverso
+		//para usar el método hasPrevious, hay que poner ListIterator en lugar de solo Iterator.
 		t2 = System.nanoTime();
 		ListIterator<Integer> it2 = listaLink.listIterator(listaLink.size());
 		while (it2.hasPrevious() ) {
 			suma += it2.previous();
 		}
-
 		t3 = System.nanoTime();
 		
 		// FIN DE PRUEBAS, MOSTRAMOS RESULTADOS:

@@ -50,14 +50,12 @@ public class BenchMarkRecForInverso {
 		t2 = System.nanoTime();
         for (int i=listaLink.size()-1; i>= 0; i--) {
         	suma += listaLink.get(i);
-        }
-		
+        }		
 		t3 = System.nanoTime();
 		
 		// FIN DE PRUEBAS, MOSTRAMOS RESULTADOS:
 		System.out.printf("Tardó en recorrido %s: %.2f ms.\n","ArrayList for Inverso (;;) ",(t2-t1)/1000.0);
 		System.out.printf("Tardó en recorrido %s: %.2f ms.\n","LinkedList for Inverso (;;) ",(t3-t2)/1000.0);
-
 		
 	}
 

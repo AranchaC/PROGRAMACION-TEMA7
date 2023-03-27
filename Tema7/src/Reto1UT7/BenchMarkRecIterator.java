@@ -39,7 +39,9 @@ public class BenchMarkRecIterator {
 		
 		// CAMBIAR A PARTIR DE AQUÍ:
 		
-		// PRUEBAS DE RECORRIDO DE UNA LISTA:
+		// PRUEBAS DE RECORRIDO DE UNA LISTA CON ITERADOR:
+		// Hay que crear primero un tipo Iterator de Integer con nuestra lista.
+		
 		// ArrayList con iterator
 		t1 = System.nanoTime();
 		Iterator<Integer> it = lista.iterator();
@@ -52,8 +54,7 @@ public class BenchMarkRecIterator {
 		Iterator<Integer> it2 = listaLink.iterator();
 		while (it2.hasNext()) {
 			suma += it2.next();
-		}
-		
+		}		
 		t3 = System.nanoTime();
 		
 		// FIN DE PRUEBAS, MOSTRAMOS RESULTADOS:

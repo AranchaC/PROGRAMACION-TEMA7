@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
-public class BenchMarkRecBinarySearch {
+public class BenchMarkBinarySearch {
 
 	public static void main(String[] args) throws InterruptedException {
 		final int NUM_ITERACIONES = 1000000;

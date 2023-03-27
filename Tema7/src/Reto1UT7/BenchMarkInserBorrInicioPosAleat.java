@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
-public class BenchMarkInserBorrMitad {
+public class BenchMarkInserBorrInicioPosAleat {
 
 	public static void main(String[] args) throws InterruptedException {
 		final int NUM_ITERACIONES = 1000000;
@@ -29,27 +29,32 @@ public class BenchMarkInserBorrMitad {
 		
 		long contador1=1;
 		long contador2 =1;
+		//para insertar y borrar en posición aleatoria, primero hay que sacar la posición con Math.randorm.
+		//en el rango desde posición 0 hasta el límite de cada lista, el .size.
+		//lo demás es igual que con el resto de métodos de inserción.
+		int posArr = (int) (Math.random()*(0-lista.size()+lista.size()));
+		int posLink = (int) (Math.random()*(0-listaLink.size()+listaLink.size()));
 		t1 = System.nanoTime();
-		//inserto 1 elemento en ArrayList al final 
+		//inserto 1 elemento en ArrayList 
 		//y lo borro 100000
 		while (contador1<10000) {
-			lista.add(lista.size()/2,1111);
-			lista.remove((lista.size()-1)/2);
+			lista.add(posArr,1111);
+			lista.remove(posArr);
 			contador1++;		
 		}//while					
 		t2 = System.nanoTime();
-		//inserto 1 elemento en LinkedList al final 
+		//inserto 1 elemento en LinkedList 
 		//y lo borro 100000
 		while (contador2<10000) {
-			listaLink.add(listaLink.size()/2,1111);
-			listaLink.remove((listaLink.size()-1)/2);
-			contador2++;	
+			listaLink.add(posLink,1111);
+			listaLink.remove(posLink);
+			contador2++;		
 		}//while	
 		t3 = System.nanoTime();
 
 		// FIN DE PRUEBAS, MOSTRAMOS RESULTADOS:
-		System.out.printf("Tardó en insertar y borrar %s: %.2f ms.\n","ArrayList en la mitad ",(t2-t1)/1000.0);
-		System.out.printf("Tardó en insertar y borrar %s: %.2f ms.\n","LinkedList en la mitad ",(t3-t2)/1000.0);
+		System.out.printf("Tardó en insertar y borrar %s: %.2f ms.\n","ArrayList en posición aleat. ",(t2-t1)/1000.0);
+		System.out.printf("Tardó en insertar y borar %s: %.2f ms.\n","LinkedList en posición aleat.  ",(t3-t2)/1000.0);
 
 	}
 

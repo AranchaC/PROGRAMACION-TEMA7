@@ -33,7 +33,7 @@ public class BenchMarkInserBorrFinal {
 		//inserto 1 elemento en ArrayList al final 
 		//y lo borro 100000
 		while (contador1<10000) {
-			lista.add(lista.size()-1,1111);
+			lista.add(lista.size(),1111);
 			lista.remove(lista.size()-1);
 			contador1++;		
 		}//while					
