@@ -1,6 +1,7 @@
 package Reto1UT7;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -23,42 +24,36 @@ public class BenchMarkRecBinarySearch {
 			aleatorios[i] = (int)(Math.random()*Integer.MAX_VALUE);
 		}
 		
-		// rellenado y vaciado inicial de la lista para calentar:
+		// rellenado de cada lista:
 		for (int i=0; i<NUM_ELEMENTOS;i++) lista.add(aleatorios[i]);
 		for (int i=0; i<listaLink.size();i++) listaLink.add(aleatorios[i]);
 		
-		lista.sort(null);
-		//
-		long suma = 0;
-
+		//ordeno ambas listas con sort, sin especificar parámetro, 
+		//según el orden establecido en la interfaz comparable.
+		Collections.sort(lista);
+		Collections.sort(listaLink);
+		
 		Thread.sleep(ESPERA); 
-		for (int i=0; i<lista.size(); i++) {
-			suma += lista.get(i);
-		}
-		for (int i=0; i<listaLink.size(); i++) {
-			suma += listaLink.get(i);
-		}
 		
-		// CAMBIAR A PARTIR DE AQUÍ:
+		//Búsqueda de todos los elementos mediante bucle FOR: pasando por parámetro el nombre de la lista 
+		//y el elemento a buscar, como nuestra lista está compuesta por el array aleatorios se pone aleatorios[i], 
+		//y como está en el bucle, el elemento de la posición i va aumentando hasta el último.
 		
-		// PRUEBAS DE RECORRIDO DE UNA LISTA:
-		// ArrayList con for (;;)
+		//Búsqueda en ArrayList de todos los elementos.
 		t1 = System.nanoTime();
 		for (int i=0; i<lista.size(); i++) {
-			suma += lista.get(i);
-		}
-		
-		// LinkedList con for (;;)
+			Collections.binarySearch(lista, aleatorios[i]);
+		}	
 		t2 = System.nanoTime();
+		//Búsqueda en LinkedList de todos los elementos.
 		for (int i=0; i<listaLink.size(); i++) {
-			suma += listaLink.get(i);
+			Collections.binarySearch(listaLink, aleatorios[i]);
 		}
-		
 		t3 = System.nanoTime();
 		
 		// FIN DE PRUEBAS, MOSTRAMOS RESULTADOS:
-		System.out.printf("Tardó en recorrido %s: %.2f ms.\n","ArrayList for(;;) ",(t2-t1)/1000.0);
-		System.out.printf("Tardó en recorrido %s: %.2f ms.\n","LinkedList for(;;) ",(t3-t2)/1000.0);
+		System.out.printf("Tardó en buscar %s: %.2f ms.\n","ArrayList ",(t2-t1)/1000.0);
+		System.out.printf("Tardó en buscar %s: %.2f ms.\n","LinkedList ",(t3-t2)/1000.0);
 
 		
 	}

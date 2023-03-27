@@ -25,7 +25,6 @@ public class BenchMarkInserBorrMitad {
 		for (int i=0; i<NUM_ELEMENTOS;i++) lista.add(aleatorios[i]);
 		for (int i=0; i<listaLink.size();i++) listaLink.add(aleatorios[i]);
 		
-		////
 		Thread.sleep(ESPERA); 
 		
 		long contador1=1;
@@ -47,7 +46,6 @@ public class BenchMarkInserBorrMitad {
 			contador2++;	
 		}//while	
 		t3 = System.nanoTime();
-
 
 		// FIN DE PRUEBAS, MOSTRAMOS RESULTADOS:
 		System.out.printf("Tardó en insertar y borrar %s: %.2f ms.\n","ArrayList en la mitad ",(t2-t1)/1000.0);

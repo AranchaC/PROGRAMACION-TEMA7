@@ -25,7 +25,6 @@ public class BenchMarkInserBorrFinal {
 		for (int i=0; i<NUM_ELEMENTOS;i++) lista.add(aleatorios[i]);
 		for (int i=0; i<listaLink.size();i++) listaLink.add(aleatorios[i]);
 		
-		////
 		Thread.sleep(ESPERA); 
 		
 		long contador1=1;
@@ -42,12 +41,11 @@ public class BenchMarkInserBorrFinal {
 		//inserto 1 elemento en LinkedList al final 
 		//y lo borro 100000
 		while (contador2<10000) {
-			((LinkedList<Integer>) listaLink).addLast(1111);
-			((LinkedList<Integer>) listaLink).removeLast();
+			listaLink.add(listaLink.size(),1111);
+			listaLink.remove(listaLink.size()-1);
 			contador2++;	
 		}//while	
 		t3 = System.nanoTime();
-
 
 		// FIN DE PRUEBAS, MOSTRAMOS RESULTADOS:
 		System.out.printf("Tardó en insertar y borrar %s: %.2f ms.\n","ArrayList al final ",(t2-t1)/1000.0);

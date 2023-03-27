@@ -25,7 +25,6 @@ public class BenchMarkInserBorrInicio {
 		for (int i=0; i<NUM_ELEMENTOS;i++) lista.add(aleatorios[i]);
 		for (int i=0; i<listaLink.size();i++) listaLink.add(aleatorios[i]);
 		
-		////
 		Thread.sleep(ESPERA); 
 		
 		long contador1=1;
