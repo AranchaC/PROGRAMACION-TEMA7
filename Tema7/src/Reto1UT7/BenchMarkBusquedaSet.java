@@ -28,8 +28,8 @@ public class BenchMarkBusquedaSet {
 		}
 		
 		// rellenado de cada lista:
-		for (int i=0; i<listaHash.size();i++) listaHash.add(aleatorios[i]);
-		for (int i=0; i<listaTree.size();i++) listaTree.add(aleatorios[i]);	
+		for (int i=0; i<NUM_ELEMENTOS;i++) listaHash.add(aleatorios[i]);
+		for (int i=0; i<NUM_ELEMENTOS;i++) listaTree.add(aleatorios[i]);	
 		
 		Thread.sleep(ESPERA); 
 		

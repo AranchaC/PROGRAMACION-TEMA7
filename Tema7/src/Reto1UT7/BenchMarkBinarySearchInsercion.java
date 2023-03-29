@@ -27,8 +27,8 @@ public class BenchMarkBinarySearchInsercion {
 		}
 		
 		// rellenado de cada lista:
-		for (int i=0; i<listaLink.size();i++) listaLink.add(aleatorios[i]);
-		for (int i=0; i<listaTree.size();i++) listaTree.add(aleatorios[i]);	
+		for (int i=0; i<NUM_ELEMENTOS;i++) listaLink.add(aleatorios[i]);
+		for (int i=0; i<NUM_ELEMENTOS;i++) listaTree.add(aleatorios[i]);	
 		
 		Collections.sort(listaLink);
 		//Búsqueda en LinkedList de todos los elementos.

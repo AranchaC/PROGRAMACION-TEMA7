@@ -23,7 +23,7 @@ public class BenchMarkInserBorrInicioPosAleat {
 			aleatorios[i] = (int)(Math.random()*Integer.MAX_VALUE);
 		}		
 		for (int i=0; i<NUM_ELEMENTOS;i++) lista.add(aleatorios[i]);
-		for (int i=0; i<listaLink.size();i++) listaLink.add(aleatorios[i]);
+		for (int i=0; i<NUM_ELEMENTOS;i++) listaLink.add(aleatorios[i]);
 		
 		Thread.sleep(ESPERA); 
 		

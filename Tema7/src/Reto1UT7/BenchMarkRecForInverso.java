@@ -25,7 +25,7 @@ public class BenchMarkRecForInverso {
 		
 		// rellenado y vaciado inicial de la lista para calentar:
 		for (int i=0; i<NUM_ELEMENTOS;i++) lista.add(aleatorios[i]);
-		for (int i=0; i<listaLink.size();i++) listaLink.add(aleatorios[i]);
+		for (int i=0; i<NUM_ELEMENTOS;i++) listaLink.add(aleatorios[i]);
 		
 		long suma = 0;
 		// espera ESPERA segundos para estabilizar antes de medir tiempos

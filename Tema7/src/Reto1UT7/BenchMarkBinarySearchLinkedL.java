@@ -26,7 +26,7 @@ public class BenchMarkBinarySearchLinkedL {
 		
 		// rellenado de cada lista:
 		for (int i=0; i<NUM_ELEMENTOS;i++) lista.add(aleatorios[i]);
-		for (int i=0; i<listaLink.size();i++) listaLink.add(aleatorios[i]);
+		for (int i=0; i<NUM_ELEMENTOS;i++) listaLink.add(aleatorios[i]);
 		
 		//ordeno ambas listas con sort, sin especificar parámetro, 
 		//según el orden establecido en la interfaz comparable.

@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
-public class BenchMarkInserBorrFinal {//
+public class BenchMarkInserBorrFinal {
 
 	public static void main(String[] args) throws InterruptedException {
 		final int NUM_ITERACIONES = 1000000;
@@ -23,7 +23,7 @@ public class BenchMarkInserBorrFinal {//
 			aleatorios[i] = (int)(Math.random()*Integer.MAX_VALUE);
 		}		
 		for (int i=0; i<NUM_ELEMENTOS;i++) lista.add(aleatorios[i]);
-		for (int i=0; i<listaLink.size();i++) listaLink.add(aleatorios[i]);
+		for (int i=0; i<NUM_ELEMENTOS;i++) listaLink.add(aleatorios[i]);
 		
 		Thread.sleep(ESPERA); 
 		

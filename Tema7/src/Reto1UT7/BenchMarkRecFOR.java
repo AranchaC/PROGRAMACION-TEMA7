@@ -1,6 +1,7 @@
 package Reto1UT7;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -25,7 +26,8 @@ public class BenchMarkRecFOR {
 		
 		// rellenado y vaciado inicial de la lista para calentar:
 		for (int i=0; i<NUM_ELEMENTOS;i++) lista.add(aleatorios[i]);
-		for (int i=0; i<listaLink.size();i++) listaLink.add(aleatorios[i]);
+		for (int i=0; i<NUM_ELEMENTOS;i++) listaLink.add(aleatorios[i]);
+
 		
 		//while (! lista.isEmpty()) lista.remove(lista.size()-1);
 		

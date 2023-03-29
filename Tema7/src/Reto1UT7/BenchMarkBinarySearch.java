@@ -11,7 +11,7 @@ public class BenchMarkBinarySearch {
 
 	public static void main(String[] args) throws InterruptedException {
 		final int NUM_ITERACIONES = 1000000;
-		final int NUM_ELEMENTOS = 100000;
+		final int NUM_ELEMENTOS = 10000;
 		final int ESPERA = 2000; // segundos de espera antes de la prueba
 		List<Integer> lista = new ArrayList<Integer>(NUM_ITERACIONES);
 		List<Integer> listaLink = new LinkedList<Integer>();
@@ -26,7 +26,7 @@ public class BenchMarkBinarySearch {
 		
 		// rellenado de cada lista:
 		for (int i=0; i<NUM_ELEMENTOS;i++) lista.add(aleatorios[i]);
-		for (int i=0; i<listaLink.size();i++) listaLink.add(aleatorios[i]);
+		for (int i=0; i<NUM_ELEMENTOS;i++) listaLink.add(aleatorios[i]);
 		
 		//ordeno ambas listas con sort, sin especificar parámetro, 
 		//según el orden establecido en la interfaz comparable.
