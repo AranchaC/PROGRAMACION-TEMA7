@@ -11,9 +11,9 @@ import java.util.TreeSet;
 public class PruebaListas {
 
 	public static void main(String[] args) {
-		String texto ="Elements . An ordered collection (also known as a sequence). "
-				+ "and the user can access elements by their integer index (position in the list)"
-				+ ", and search for elements in the list list.";
+		String texto ="Elements . An ordered collection and (also known as a sequence). "
+				+ "and the user can access elements by their in search integer index (position in the list)"
+				+ ", and search for in elements in the list elements list.";
 				
 		List<String> palabras = new ArrayList<String>();
 		String[] pals = texto.split("\\W+");
