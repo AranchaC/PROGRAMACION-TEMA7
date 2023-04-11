@@ -48,8 +48,16 @@ public class PalabrasContador {
 		}*/
 		
 		//Recorrido con ForEach:
-		frecuencias.forEach( (a,b) -> System.out.println(a+": "+b) );
+		/*frecuencias.forEach( (a,b) -> System.out.println(a+": "+b) );*/
+		
+		System.out.println(
+			frecuencias.keySet()
+				.stream()
+				.map( (a) -> a.length() )
+				.reduce(0, Integer::sum) // ((a,b) -> (a+b))
+						//map: lo transforma en ota cosa
 
+		);
 
 	}
 
