@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 /**
  * Creado por  Ascari Q. Romo Pedraza - molder.itp@gmail.com on 17/04/17.
@@ -44,7 +45,10 @@ public class Util {
 
             sc.nextLine(); // pasamos a la siguiente linea
         }
-
+        
+       /* Stream<Product> productStream = products.stream(); 
+        productStream.forEach(product -> System.out.println(product));*/
+        
         return products;
     }
 }

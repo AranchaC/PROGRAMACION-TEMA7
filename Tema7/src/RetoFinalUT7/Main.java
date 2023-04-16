@@ -17,16 +17,54 @@ public class Main {
 
     public List<String> sorted(){
         List<Product> products = Util.getProducts();
-        Stream<String> streams = products.stream()
-                .map(Product::getName)
-                ;
-
+        
+    	//punto 2:
+    	/*
+    	 * Stream<Product> productStream = products.stream();
+    	 * productStream.forEach(product -> System.out.println(product));
+    	 */
+    	  	        
+         //punto 3:
+         /*
+          * Stream<String> streams = products.stream().map(Product::getName);
+          */
+           	
+        /*
+         * punto 4: 
+         * vemos que solo saleen 12 nombres, con el filtro.
+         */
+        /*Stream<String> streams = products.stream().filter(p -> p.getUnitsInStock()<10)
+        		.map(Product::getName);
+		        /*Esta línea da error, pero no es necesario para la salida por pantalla:
+		         * streams.forEach(product -> System.out.println(product));
+		         */
+		        
+        /*
+         * punto 5: 
+         * vemos que salen los 12 nombres, pero en otro orden, según UnitsInStock.
+		 */
+                
+        Stream<String> streams = products.stream().filter(p -> p.getUnitsInStock()<10)
+                .sorted(Comparator.comparingDouble(Product::getUnitsInStock).reversed())
+                .map(Product::getName);
+        
+        /* para comprobarlo, ya que no mostramos ese dato, en vez de GetName en map, ponemos 
+         * getUnitsInStock, y en Stream<Integer>, 
+         * también ponemos Integer en el public List<Integer>:
+         *
+                 Stream<Integer> streams1 = products.stream().filter(p -> p.getUnitsInStock()<10)
+                .sorted(Comparator.comparingDouble(Product::getUnitsInStock))
+                .map(Product::getUnitsInStock);
+		*/
+        
         return streams.collect(Collectors.toList());
     }
 
     public static void main(String[] args) {
         Main main = new Main();
         main.sorted().forEach(System.out::println);
+        
+        
     }
 
 }
