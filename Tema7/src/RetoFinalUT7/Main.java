@@ -44,9 +44,10 @@ public class Main {
          * vemos que salen los 12 nombres, pero en otro orden, según UnitsInStock.
 		 */
                 
-        Stream<String> streams = products.stream().filter(p -> p.getUnitsInStock()<10)
+        Stream<String> streams1 = products.stream().filter(p -> p.getUnitsInStock()<10)
                 .sorted(Comparator.comparingDouble(Product::getUnitsInStock).reversed())
                 .map(Product::getName);
+        
         
         /* para comprobarlo, ya que no mostramos ese dato, en vez de GetName en map, ponemos 
          * getUnitsInStock, y en Stream<Integer>, 
@@ -56,6 +57,31 @@ public class Main {
                 .sorted(Comparator.comparingDouble(Product::getUnitsInStock))
                 .map(Product::getUnitsInStock);
 		*/
+        
+        //punto 5 con interfaz comparable:
+        /*Stream<String> streams2 = products.stream()
+        		.filter(p -> p.getUnitsInStock()<10)
+        		.sorted()
+        		.map(Product::getName);
+        
+        Stream<String> streams = products.stream()
+        		.filter(p -> p.getUnitsInStock()<10)
+        		.sorted(Comparator.reverseOrder())
+        		.map(Product::getName);
+        */
+        //orden 1ro por units descendente y luego por name ascendente.
+        Stream<String> streams2 = products.stream()
+        		.filter(p -> p.getUnitsInStock()<10)
+        		.sorted(Comparator.comparing(Product::getUnitsInStock).reversed()
+        		.thenComparing(Product::getName))
+        		.map(Product::getName);
+        
+        //orden 1ro por units ascendente y luego por name descendente.
+        Stream<String> streams = products.stream()
+        		.filter(p -> p.getUnitsInStock()<10)
+        		.sorted(Comparator.comparing(Product::getUnitsInStock)
+        		.thenComparing(Product::getName).reversed())
+        		.map(Product::getName);
         
         return streams.collect(Collectors.toList());
     }
