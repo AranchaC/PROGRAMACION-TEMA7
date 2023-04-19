@@ -19,9 +19,10 @@ public class Util {
 
     public static List<Product> getProducts(){
         // Cargamos el archivo ubicado en la carpeta resources.   	
-
        ClassLoader classLoader = Util.class.getClassLoader();
+       
        Scanner sc = new Scanner(classLoader.getResourceAsStream("products.csv"));
+       
        sc.useLocale(Locale.ENGLISH);
 
        sc.nextLine(); // comenzamos a leer a partir de la segunda linea (la primera tiene solo los titulos)

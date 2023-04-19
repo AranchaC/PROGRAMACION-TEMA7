@@ -30,8 +30,7 @@ public class PruebaMultimedia {
 		lista = Arrays.asList(obras);
 		System.out.println(lista);
 		
-		Stream<String> streams = lista.stream()
-				.map(Multimedia::getTitulo);
+		Stream<String> streams = lista.stream().map(null);
 		
 
 	}
