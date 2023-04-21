@@ -16,6 +16,7 @@ import java.util.stream.Stream;
  * Este codigo es solo la base, no contiene los ejercicios descritos en el blog.
  */
 public class Util {
+	
 
     public static List<Product> getProducts(){
         // Cargamos el archivo ubicado en la carpeta resources.   	
