@@ -1,6 +1,9 @@
 package Multimedia;
 
-public class Película extends Multimedia implements Comparable<Película>{
+import java.util.Comparator;
+
+public class Película extends Multimedia implements 
+	 Comparable<Película>{
 	protected String actorPrincipal, actrizPrincipal;
 
 	public Película(String título, String autor, double duración, Formato formato, String actorPrincipal,
@@ -59,9 +62,9 @@ public class Película extends Multimedia implements Comparable<Película>{
 		}//else
 		return 0;		
 	}
-	
 
-		//return (int) ((this.duración*1000) - (o.duración*1000));
+
+	
 }
 
 

@@ -2,6 +2,8 @@ package Multimedia;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -24,15 +26,22 @@ public class PruebaMultimedia {
 		
 		//System.out.println(obras.toString());
 		obras.sort();
-		//System.out.println(obras);
+		System.out.println(obras);
+		System.out.println();
 		
-		List<ListaMultimedia> lista = new ArrayList<ListaMultimedia>();
-		lista = Arrays.asList(obras);
-		System.out.println(lista);
+		//List<ListaMultimedia> lista = new ArrayList<ListaMultimedia>();
+		List<Película> lista = Arrays.asList(
+				new Película ("LA LA LAND","Damien Chazelle", 2.8, Formato.DVD, "RYAN GOSLING", "EMMA STONE"),
+				new Película ("TITANIC","James Cameron", 3.30, Formato.MP3, "LEO DI CAPRIO","KATE WINSLET"),
+				new Película ("PIRATAS DEL CARIBE","Disney", 2.23, Formato.AVI, "JOHNNY DEPP", "ORLANDO BLOOM"),
+				new Película ("ENOLA HOLMES","Netflix", 2.3, Formato.MOV, null, "MILLIE BOBBY BROWN"),
+				new Película ("CRIADAS Y SEÑORAS","Tate Taylor", 2.26, Formato.MP3, "VIOLA DAVIS", "EMMA STONE")
+				);
+		Collections.sort(lista, new ordenComparator());	
+		System.out.println("comparator:\n"+lista);
 		
-		Stream<String> streams = lista.stream().map(null);
+		//Stream<String> streams = lista.stream().map(null);
 		
-
 	}
 
 }
