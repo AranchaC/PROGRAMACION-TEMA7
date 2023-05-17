@@ -1,5 +1,6 @@
 package Multimedia;
 
+import java.util.Comparator;
 import java.util.Objects;
 
 public class Multimedia {
@@ -62,6 +63,7 @@ public class Multimedia {
 			return false;*/
 		Multimedia other = (Multimedia) obj;
 		return Objects.equals(autor, other.autor);
-	}	
+	}
+
 	
 }

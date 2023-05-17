@@ -1,6 +1,6 @@
 package Multimedia;
 
-import java.util.ArrayList;
+import java.util.*;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -25,12 +25,18 @@ public class PruebaMultimedia {
 		obras.add(new Película ("ENOLA HOLMES","Netflix", 2.3, Formato.MOV, null, "MILLIE BOBBY BROWN"));
 		
 		//System.out.println(obras.toString());
-		obras.sort();
-		System.out.println(obras);
+		//obras.sort();
+		//System.out.println(obras);
 		System.out.println();
 		
+		List<ListaMultimedia> listaObras = Arrays.asList(obras);
+		System.out.println(listaObras);
+		Set<ListaMultimedia> listaTree = new TreeSet<ListaMultimedia>();
+		listaTree.addAll(listaObras);
+		System.out.println(listaTree);
+		
 		//List<ListaMultimedia> lista = new ArrayList<ListaMultimedia>();
-		List<Película> lista = Arrays.asList(
+		/*List<Película> lista = Arrays.asList(
 				new Película ("LA LA LAND","Damien Chazelle", 2.8, Formato.DVD, "RYAN GOSLING", "EMMA STONE"),
 				new Película ("TITANIC","James Cameron", 3.30, Formato.MP3, "LEO DI CAPRIO","KATE WINSLET"),
 				new Película ("PIRATAS DEL CARIBE","Disney", 2.23, Formato.AVI, "JOHNNY DEPP", "ORLANDO BLOOM"),
@@ -38,7 +44,7 @@ public class PruebaMultimedia {
 				new Película ("CRIADAS Y SEÑORAS","Tate Taylor", 2.26, Formato.MP3, "VIOLA DAVIS", "EMMA STONE")
 				);
 		Collections.sort(lista, new ordenComparator());	
-		System.out.println("comparator:\n"+lista);
+		System.out.println("LISTA comparator:\n"+lista);*/
 		
 		//Stream<String> streams = lista.stream().map(null);
 		
