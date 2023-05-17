@@ -31,7 +31,7 @@ public class PalabrasContador {
 			}//else
 		}//for
 		
-		//System.out.println(frecuencias);
+		System.out.println(frecuencias);
 		
 		//Recorrido con KeySet:
 		/*Set<String> noRepes = frecuencias.keySet();

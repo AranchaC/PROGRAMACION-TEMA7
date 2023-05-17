@@ -12,6 +12,7 @@ public class PruebaCodPostal {
 		cps.put(28030, "Moratalaz");
 		cps.put(28017, "La Elipa");
 		cps.put(28038, "Puente de Vallecas");
+		System.out.println(cps);
 		
 		Scanner entrada = new Scanner(System.in);
 		while(true) {

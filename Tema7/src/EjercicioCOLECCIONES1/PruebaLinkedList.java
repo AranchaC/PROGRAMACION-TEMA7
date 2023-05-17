@@ -20,7 +20,7 @@ public class PruebaLinkedList {
 		ListIterator<String> it = personas.listIterator();
 		//voya a añadir a eva entre el 1 y el 2
 		it.next();
-		it.add("eva");
+		it.add("natalia");
 		it.previous();
 		it.add("sara");
 		while (it.hasNext()) {

@@ -10,7 +10,7 @@ public class ClientesBanco {
 		Cliente cli2 = new Cliente("Eva", "002", 20000);
 		Cliente cli3 = new Cliente("Sara", "003", 200000);
 		Cliente cli4 = new Cliente("Ana", "004", 20);
-		Cliente cli5 = new Cliente("Arancha", "001", 20000);
+		Cliente cli5 = new Cliente("irene", "001", 50);
 		
 		Set<Cliente> cliDelBanco = new HashSet<Cliente>();
 		cliDelBanco.add(cli1);
