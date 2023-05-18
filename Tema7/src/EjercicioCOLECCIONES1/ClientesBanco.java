@@ -6,51 +6,66 @@ import java.util.*;
 public class ClientesBanco {
 
 	public static void main(String[] args) {
-		Cliente cli1 = new Cliente("Arancha", "001", 20000);
-		Cliente cli2 = new Cliente("Eva", "002", 20000);
-		Cliente cli3 = new Cliente("Sara", "003", 200000);
-		Cliente cli4 = new Cliente("Ana", "004", 20);
+		Cliente cli1 = new Cliente("eva", "001", 700);
+		Cliente cli2 = new Cliente("arancha", "002", 20000);
+		Cliente cli3 = new Cliente("sara", "003", 1800);
+		Cliente cli4 = new Cliente("ana", "004", 200);
 		Cliente cli5 = new Cliente("irene", "001", 50);
+		Cliente cli6 = new Cliente("natalia", "006", 1500);
+		Cliente cli7 = new Cliente("azahara", "007", 300);
+		Cliente cli8 = new Cliente("irene", "008", 55050);
 		
+		//Set<Cliente> cliDelBanco = new HashSet<Cliente>();
 		Set<Cliente> cliDelBanco = new HashSet<Cliente>();
 		cliDelBanco.add(cli1);
 		cliDelBanco.add(cli2);
 		cliDelBanco.add(cli3);
 		cliDelBanco.add(cli4);
-		cliDelBanco.add(cli5);//no se añade porque está repetido.
+		cliDelBanco.add(cli5);//no se añade porque está repetido, mismo nºcuenta.
+		cliDelBanco.add(cli6);
+		cliDelBanco.add(cli7);
+		cliDelBanco.add(cli8);
 		
-		//eliminar elementeo con iterador
+		//eliminar elemento con iterador
 		Iterator<Cliente> it = cliDelBanco.iterator();
 		while (it.hasNext()) {
 			String nombreCli = it.next().getNombre();
-			if (nombreCli.equals("Sara")) it.remove();
+			if (nombreCli.equals("sara")) it.remove();
 		}
-		
+
 		//mostrar datos con for each
 		for (Cliente c : cliDelBanco) {
-			System.out.println(c.getNombre()+" "+c.getnCuenta()+" "+c.getSaldo());
+			System.out.println(c.getNombre()+" "+c.getnCuenta()+" "+c.getSaldo()+". hashcode: "+c.hashCode());
 		}
 		
 		/*
-		Iterator<Cliente> it = cliDelBanco.iterator();		
-		while (it.hasNext()) {
-			String nombreCli = it.next().toString();
+		//mostrar datos con Iterador
+		Iterator<Cliente> it1 = cliDelBanco.iterator();		
+		while (it1.hasNext()) {
+			String nombreCli = it1.next().toString();
 			System.out.println(nombreCli);
 		}
 		*/
-		
-		
-		
-		/*
-		if (cli1.equals(cli5)) {
-			System.out.println("son iguales");
-		}
-		else {
-			System.out.println("no son iguales");
-			System.out.println(cli1.hashCode());
-			System.out.println(cli2.hashCode());
-		}
-		*/
-	}
+		System.out.println();
 
+		List<Cliente> listCli = new ArrayList<Cliente>();
+		listCli.addAll(cliDelBanco);
+		System.out.println("ArrayList:");
+		
+		//listCli.sort(new ComparaSaldo());
+		Collections.sort(listCli, new ComparaSaldo());
+		
+		for (Cliente c : listCli) {
+			System.out.println(c.getNombre()+" "+c.getnCuenta()+" "+c.getSaldo());
+		}
+	}
+}
+
+class ComparaSaldo implements Comparator<Cliente> {
+
+	@Override
+	public int compare(Cliente o1, Cliente o2) {
+		return (int) (o1.getSaldo()-o2.getSaldo());
+	}
+	
 }

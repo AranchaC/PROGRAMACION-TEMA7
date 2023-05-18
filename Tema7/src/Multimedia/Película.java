@@ -51,7 +51,7 @@ public class Película extends Multimedia implements
 
 	@Override
 	public int compareTo(Película o) {
-		return this.título.compareToIgnoreCase(o.getTítulo());
+		return this.autor.compareToIgnoreCase(o.getAutor());
 	
 	}
 
