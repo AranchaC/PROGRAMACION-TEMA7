@@ -3,7 +3,7 @@ package EjercicioCOLECCIONES1;
 import java.util.*;
 import java.util.List;
 
-public class PruebaLinkedList {
+public class PruebaLinkedList {//
 
 	public static void main(String[] args) {
 		
