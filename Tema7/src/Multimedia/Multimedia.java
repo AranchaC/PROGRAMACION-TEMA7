@@ -52,18 +52,18 @@ public class Multimedia {
 	public String toString() {
 		return "Título= " + título + "\n Autor= " + autor + "\n Duración= " + duración+" \n Formato= "+formato+"\n" ; 
 	}
-
+/*
+	@Override
+	public int hashCode() {
+		return Objects.hash(autor);
+	}
+*/
 	@Override
 	public boolean equals(Object obj) {
-		/*if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;*/
 		Multimedia other = (Multimedia) obj;
 		return Objects.equals(autor, other.autor);
 	}
+	
 
 	
 }

@@ -33,7 +33,7 @@ public class EjLinkedList {
 			it1.add(it2.next());
 		}
 		
-		//opción2
+		//opción2 con un iterator
 		/*int index=0;
 		while (it1.hasNext()) {
 			it1.next();
@@ -59,10 +59,6 @@ public class EjLinkedList {
 			System.out.println(s);
 		}
 		
-		
-		
-		
-			
 	}
 
 }

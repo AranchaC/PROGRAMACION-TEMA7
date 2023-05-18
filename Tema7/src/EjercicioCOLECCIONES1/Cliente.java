@@ -2,7 +2,7 @@ package EjercicioCOLECCIONES1;
 
 import java.util.Objects;
 
-public class Cliente {
+public class Cliente implements Comparable<Cliente>{
 	private String nombre;
 	private String nCuenta;
 	private double saldo;
@@ -58,6 +58,11 @@ public class Cliente {
 			return false;
 		Cliente other = (Cliente) obj;
 		return Objects.equals(nCuenta, other.nCuenta);
+	}
+
+	@Override
+	public int compareTo(Cliente o) {
+		return nCuenta.compareTo(o.getnCuenta());
 	}
 
 

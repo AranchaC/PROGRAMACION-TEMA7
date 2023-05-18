@@ -5,7 +5,7 @@ import java.util.*;
 public class EjColeccioinTreeSet {
 
 	public static void main(String[] args) {
-		/*Set<String> ordenaGente = new TreeSet<String>();
+		Set<String> ordenaGente = new TreeSet<String>();
 		ordenaGente.add("Oscar");
 		ordenaGente.add("María");
 		ordenaGente.add("Ana");
@@ -13,7 +13,10 @@ public class EjColeccioinTreeSet {
 		
 		for (String s : ordenaGente) {
 			System.out.println(s);
-		}*/
+		}
+		
+		System.out.println();
+		
 		Productos comparador = new Productos();		
 		
 		Set<Productos> ordenaProd = new TreeSet<Productos>(comparador);

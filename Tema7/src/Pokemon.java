@@ -7,29 +7,22 @@ public class Pokemon implements Comparable<Pokemon> {
 		super();
 		this.nombre = nombre;
 	}
-	
-	
 
 	public String getNombre() {
 		return nombre;
 	}
 
-
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-
-
 	@Override
 	public String toString() {
-		return "Pokemon [nombre=" + nombre + "]\n";
+		return "Pokemon [nombre=" + nombre + "]";
 	}
 
 	@Override
 	public int compareTo(Pokemon o) {
-		// TODO Auto-generated method stub
 		return nombre.compareTo(o.nombre);
 	}
 	
