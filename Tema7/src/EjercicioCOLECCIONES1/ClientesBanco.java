@@ -49,8 +49,8 @@ public class ClientesBanco {
 		*/
 		System.out.println();
 
-		List<Cliente> listCli = new ArrayList<Cliente>();
-		listCli.addAll(cliDelBanco);
+		List<Cliente> listCli = new ArrayList<Cliente>(cliDelBanco);
+		//listCli.addAll(cliDelBanco);
 		System.out.println("<<<ArrayList:>>>");		
 		//listCli.sort(new ComparaSaldo());
 		Collections.sort(listCli, new ComparaSaldo());

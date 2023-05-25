@@ -34,10 +34,10 @@ public class PalabrasContador {
 		System.out.println(frecuencias);
 		
 		//Recorrido con KeySet:
-		/*Set<String> noRepes = frecuencias.keySet();
+		Set<String> noRepes = frecuencias.keySet();
 		for (String palabra : noRepes) {
 			System.out.println(palabra+": "+ frecuencias.get(palabra));
-		}*/
+		}
 		
 		//Recorrido con EntrySet:
 		/*Set<Entry<String,Integer>> todas = frecuencias.entrySet();
